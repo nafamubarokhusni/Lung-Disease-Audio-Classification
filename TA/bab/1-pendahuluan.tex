@@ -1,0 +1,53 @@
+\chapter{PENDAHULUAN}
+\section{Latar Belakang}
+\label{section:latarbelakang}
+% Paragraf Bahas Paru dan penyakit paru
+Paru-paru merupakan organ vital manusia yang berfungsi untuk pertukaran oksigen dan karbon dioksida pada darah\cite{Chanda2024}. Gangguan pada paru-paru dapat berakibat buruk pada sistem pernapasan sehingga dapat menimbulkan penyakit. Menurut \textit{Lung Foundation Australia}, penyakit paru-paru dapat disebabkan oleh berbagai faktor seperti umur, perokok aktif atau pasif, lingkungan yang terpapar debu, gas, uap dan zat kimia\cite{Lung_Foundation_Australia_2023}. Salah satu penyakit paru yang berisiko yaitu \textit{Chronic obstructive pulmonary disease} (COPD) dan asma.
+
+% Paragraf 1 Bahas Data Penyakit Paru COPD dan Ashma
+\textit{Chronic obstructive pulmonary disease} (COPD) adalah gangguan pernapasan yang umum dan progresif yang ditandai dengan keterbatasan aliran udara yang terus-menerus dan sering dikaitkan dengan penyakit paru-paru lainnya seperti bronkitis kronis dan asma \cite{Muhammad_Afandy_Fadhilah_2024}. Menurut data \textit{World Health Organization} (WHO) \textit{Chronic obstructive pulmonary disease} (COPD) merupakan penyebab kematian keempat di seluruh dunia, menyebabkan 3.5 juta kematian pada tahun 2021 \cite{whoChronicObstructive}, dan diperkirakan COPD akan menjadi penyebab kematian ketiga di dunia pada tahun 2030 \cite{whoEMROChronic}. Berdasarkan survei data BPJS tahun 2024, hampir 19 juta jumlah pasien COPD yang berobat ke rumah sakit dengan penyakit tersebut \cite{bloombergtechnozPasienPPOK}. Oleh sebab itu, diperlukan metode yang dapat mengidentifikasi jenis penyakit paru-paru berdasarkan gejala yang diketahui, salah satunya yaitu suara.
+
+% Paragraf 2 Bahas riset klasifikasi audio
+Suara batuk atau paru-paru mengandung banyak informasi tentang kondisi paru-paru dan dapat digunakan untuk menilai serta mendiagnosis penyakit pernapasan \cite{heitmann2023deepbreath}. Penggunaan suara untuk identifikasi penyakit paru meningkatkan minat terhadap perawatan medis tanpa kontak untuk pemeriksaan paru-paru secara otomatis. Model Deep Learning banyak digunakan peneliti dalam menganalisis suara seperti LungRN+NL \cite{ma2020lungrn+} yang menggunakan augmentasi data campuran dan arsitektur ResNet \cite{he2016deep} untuk mengatasi ketidakseimbangan kelas data. RespireNet \cite{gairola2021respirenet} menggunakan model \textit{pre-trainer} pada ImageNet dengan strategi \textit{fine-tuning device-specific}.
+
+% Paragraf 3 Bahas riset Transformer for audio classification
+Model \textit{General-Purpose} representasi audio lainnya seperti CLAP \cite{elizalde2024naturallanguagesupervisiongeneralpurpose} menggunakan dua encoder untuk memproses input yaitu \textit{Audio Encoder} yang memproses input suara dan \textit{Text Encoder} yang memproses input berupa teks. Namun, penggunaan dua encoder mengakibatkan beban komputasi yang tinggi sehingga memerlukan sumber daya komputasi yang besar.
+
+Oleh sebab itu, pada penelitian ini mengadopsi konsep dari \textit{Video Vision Transformer} \cite{arnab2021vivitvideovisiontransformer} yang menggunakan embedding spasial $Z_s$ dan temporal $Z_t$ dengan input berupa representasi MFCC dan fitur riwayat pasien pada satu encoder yang sama sehingga mengurangi beban komputasi saat proses \textit{training}. \textit{Cross-Attention} \cite{9859720} digunakan agar suatu \textit{sequence} dapat memperhatikan informasi dari \textit{sequence} lainnya.
+
+% Paragraf 4 Merangkum Riset yang akan dilakukan
+Secara keseluruhan, kontribusi penelitian ini dapat dirangkum yaitu MFCC digunakan untuk merepresentasikan spektrum daya jangka pendek dari suatu suara yang membantu model memahami dan memproses suara manusia secara lebih efektif. Penelitian ini mengadopsi model \textit{Video Vision Transformer} untuk memahami fitur temporal dan spasial dari data audio. Data riwayat pasien digunakan untuk memperkaya fitur tanpa menambah encoder fitur sehingga beban komputasi menjadi lebih ringan.
+
+\section{Rumusan Masalah}
+Bagian ini menjadi salah satu bagian penting dalam Pendahuluan. Setelah paparan Latar Belakang \ref{section:latarbelakang}, maka masalah yang diangkat pada pekerjaan penelitian perlu dirumuskan dengan baik. Pertanyaan apa yang akan dijawab dalam penelitian dapat ditulis dalam kalimat tanya ataupun tidak.
+
+Berdasarkan latar belakang yang telah dijelaskan sebelumnya, berikut merupakan rumusan masalah pada penelitian tugas akhir ini:
+\begin{enumerate}
+	\item
+        Bagaimana penerapan konsep \textit{Video Vision Transformer} pada data suara penyakit paru dengan penambahan fitur riwayat pasien menggunakan metode \textit{Cross-Attention} dapat mengidentifikasi jenis penyakit paru-paru?
+        \item
+        Bagaimana performa penerapan konsep \textit{Video Vision Transformer} dalam mengklasifikasikan jenis penyakit paru-paru berdasarkan data suara?
+\end{enumerate}
+
+\section{Tujuan Penelitian}
+Eros reprimique vim no. Alii legendos volutpat in sed, sit enim nemore labores no. No odio decore causae has. Vim te falli libris neglegentur, eam in tempor delectus dignissim, nam hinc dictas an.
+
+Tujuan dari penelitian ini berdasarkan rumusan masalah yang juga menjadi dasar dilakukannya penelitian ini adalah sebagai berikut:
+\begin{enumerate}
+        \item 
+        Membuat model \textit{Deep Learning} untuk mengklasifikasikan jenis penyakit paru-paru menggunakan konsep Model \textit{Vision Transformer} dengan metode \textit{Cross-Attention}.
+        \item
+        Mengevaluasi performa model \textit{Video Vision Transformer} dalam mengidentifikasi fitur suara dan riwayat pasien sehingga menghasilkan klasifikasi yang sesuai
+\end{enumerate}
+
+\section{Batasan Masalah}
+
+\begin{enumerate}
+        \item 
+        Penelitian ini hanya menggunakan data suara batuk dan riwayat pasien tanpa menyertakan identitas atau informasi lainnya.
+        \item
+        Jenis penyakit paru-paru yang di identifikasi terbatas pada dataset yang digunakan.
+\end{enumerate}
+% Sub bab lain dapat ditambahkan, misalnya:
+%\section{Manfaat Penelitian}
+%\section{Hipotesis}
